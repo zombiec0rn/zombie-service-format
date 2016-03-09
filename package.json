@@ -27,6 +27,7 @@
     "jjv": "^1.0.2",
     "random-string": "^0.1.2",
     "random-number": "^0.0.7",
-    "object.assign": "^4.0.3"
+    "object.assign": "^4.0.3",
+    "clone": "^1.0.2"
   }
 }
