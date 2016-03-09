@@ -24,6 +24,29 @@ try {
 }
 ```
 
+## API
+
+#### `validate(services)`
+
+The main usecase for this module is to validate service configs. See usage example [above](#use). 
+
+#### `random(num, opts)`
+
+Generate random service configs. Useful for testing etc.
+
+```js
+var zsf = require('@zombiec0rn/zombie-service-format')
+var services = zsf.random(5, { host: { hostname: 'yolo' }})
+```
+
+#### `schema`
+
+The zsf json schema.
+
+#### `exception`
+
+The zsf exception throws if bad config.
+
 ## Format
 
     {
@@ -32,7 +55,7 @@ try {
         "cmd"     : "python server.py",    // Command to run        (optional)
         "ports"   : ["80:80","53:53/udp"], // List of port mappings (optional)
         "env"     : ["FOO=BAR"],           // Environment variables (optional)
-        "volumes" : ["/tmp:/tmp"],         // Service volumes     (optional)
+        "volumes" : ["/tmp:/tmp"],         // Service volumes       (optional)
     }
 
 ### Id
@@ -60,30 +83,8 @@ The env, **["FOO=BAR"]** in the example, is a list of environment variables. An 
 The volumes, **["/tmp:/tmp"]** in the example, is a list of volumes to mount inside the service. There are two different ways to specify a volume:
 
     "/host/path:/service/path"  // Mounts a specified path on the host to the specified path in the service
-    "/host/path"                  // Mounts a specified path on the host to the same path in the service
+    "/host/path"                // Mounts a specified path on the host to the same path in the service
 
-## API
-
-#### `validate(services)`
-
-The main usecase for this module is to validate service configs. See usage example [above](##Use). 
-
-#### `random(num, opts)`
-
-Generate random service configs. Useful for testing etc.
-
-```js
-var zsf = require('@zombiec0rn/zombie-service-format')
-var services = zsf.random(5, { host: { hostname: 'yolo' }})
-```
-
-#### `schema`
-
-The zsf json schema.
-
-#### `exception`
-
-The zsf exception throws if bad config.
 
 ## Changelog
 
