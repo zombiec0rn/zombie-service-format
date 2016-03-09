@@ -1,10 +1,10 @@
-# Common Container Configuration Format
+# Zombie Service
 
-[![NPM](https://nodei.co/npm/cccf.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cccf/)
+[![NPM](https://nodei.co/npm/zombie-service.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/zombie-service/)
 
-The Common Container Configuration Format (cccf) is an attempt at creating a standard container configuration format, in JSON. 
+Zombie Service is the configuration format for [zombiecorn]() services.
 
-It describes containers, their properties and the relationship between them. This repository will include a JSON schema validator for the cccf.
+It describes services and their properties. This repository will include a JSON schema validator for the format.
 
 The format is extensible so other modules can expand it's capabilities and semantics.
 

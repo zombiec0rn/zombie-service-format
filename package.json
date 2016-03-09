@@ -1,14 +1,14 @@
 {
-  "name": "zombie-service",
+  "name": "@zombiec0rn/zombie-service-format",
   "version": "1.0.0",
-  "description": "Zombie Service Configuration Format",
+  "description": "Zombie Service Format",
   "main": "index.js",
   "scripts": {
     "test": "mocha -w -R nyan --check-leaks"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/asbjornenge/zombie-service.git"
+    "url": "https://github.com/zombiec0rn/zombie-service-format.git"
   },
   "keywords": [
     "container",
@@ -20,9 +20,9 @@
   "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/asbjornenge/zombie-service/issues"
+    "url": "https://github.com/zombiec0rn/zombie-service-format/issues"
   },
-  "homepage": "https://github.com/asbjornenge/zombie-service",
+  "homepage": "https://github.com/zombiec0rn/zombie-service-format",
   "dependencies": {
     "jjv": "^1.0.2",
     "random-string": "^0.1.2",
