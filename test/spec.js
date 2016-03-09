@@ -121,11 +121,11 @@ describe('Zombie Service Format', function() {
 		try { zsf.validate(_multiple) } catch(e) { assert(e instanceof zsf.exception) }
 	})
 
-  it('can generate random test containers', function() {
-    var containers = zsf.random(5, { host: { hostname: 'yolo-1' } })
-    assert(containers instanceof Array)
-    assert(containers.length == 5)
-    containers.forEach(function(c) {
+  it('can generate random test services', function() {
+    var services = zsf.random(5, { host: { hostname: 'yolo-1' } })
+    assert(services instanceof Array)
+    assert(services.length == 5)
+    services.forEach(function(c) {
       assert(c.host.hostname == 'yolo-1')
     })
   })

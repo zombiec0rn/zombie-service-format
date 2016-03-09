@@ -27,29 +27,29 @@ try {
 ## Format
 
     {
-        "id"      : "app",                 // Container Id
+        "id"      : "app",                 // Service id
         "image"   : "megacorp/webapp",     // Image path
         "cmd"     : "python server.py",    // Command to run        (optional)
         "ports"   : ["80:80","53:53/udp"], // List of port mappings (optional)
         "env"     : ["FOO=BAR"],           // Environment variables (optional)
-        "volumes" : ["/tmp:/tmp"],         // Container volumes     (optional)
+        "volumes" : ["/tmp:/tmp"],         // Service volumes     (optional)
     }
 
 ### Id
 
-The id, **app** in the example, is the container identifier. It can be any arbitrary string. No spaces.
+The id, **app** in the example, is the service identifier. It can be any arbitrary string. No spaces.
 
 ### Image
 
-The image, **megacorp/webapp** in the example, is URI to the container image. It can be any valid URI, relative or full.
+The image, **megacorp/webapp** in the example, is URI to the service image. It can be any valid URI, relative or full.
 
 ### Cmd
 
-The cmd, **python server.py** in the example, is the command to execute when running the container. It can be an arbitrary string.
+The cmd, **python server.py** in the example, is the command to execute when running the service. It can be an arbitrary string.
 
 ### Ports
 
-The ports, **["80:80"]** in the example, is a list of port mappings. A port mapping is defined using a string with two ports separated by a colon: **"host-port:container-port"** where ***host-port*** references a port on the host running the container, and the ***container-port*** references a port inside the running container. Zsf also support specifying the protocol; **["53:53/udp"]**. The two supported protocols are *tcp* and *udp*. 
+The ports, **["80:80"]** in the example, is a list of port mappings. A port mapping is defined using a string with two ports separated by a colon: **"host-port:service-port"** where ***host-port*** references a port on the host running the service, and the ***service-port*** references a port inside the running service. Zsf also support specifying the protocol; **["53:53/udp"]**. The two supported protocols are *tcp* and *udp*. 
 
 ### Env
 
@@ -57,20 +57,20 @@ The env, **["FOO=BAR"]** in the example, is a list of environment variables. An 
 
 ### Volumes
 
-The volumes, **["/tmp:/tmp"]** in the example, is a list of volumes to mount inside the container. There are two different ways to specify a volume:
+The volumes, **["/tmp:/tmp"]** in the example, is a list of volumes to mount inside the service. There are two different ways to specify a volume:
 
-    "/host/path:/container/path"  // Mounts a specified path on the host to the specified path in the container
-    "/host/path"                  // Mounts a specified path on the host to the same path in the container
+    "/host/path:/service/path"  // Mounts a specified path on the host to the specified path in the service
+    "/host/path"                  // Mounts a specified path on the host to the same path in the service
 
 ## API
 
-#### `validate(containers)`
+#### `validate(services)`
 
 The main usecase for this module is to validate service configs. See usage example [above](##Use). 
 
 #### `random(num, opts)`
 
-Generate random container configs. Useful for testing etc.
+Generate random service configs. Useful for testing etc.
 
 ```js
 var zsf = require('@zombiec0rn/zombie-service-format')
