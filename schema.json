@@ -1,0 +1,45 @@
+{
+	"title" : "Common Container Configuration Format",
+	"type"  : "object",
+	"properties" : {
+		"id" : {
+			"type"    : "string",
+			"pattern" : "^/?[a-zA-Z0-9_-]+$"
+		},
+		"image" : {
+			"type" : "string"
+		},
+		"cmd" : {
+			"type" : "string"
+		},
+		"ports" : {
+			"type"  : "array",
+			"items" : {
+				"type"    : "string",
+				"pattern" : "^\\d+:\\d+(\\/(tcp|udp))?$"
+			}
+		},
+		"env" : {
+			"type"  : "array",
+			"items" : {
+				"type"    : "string",
+				"pattern" : "^\\w+=.*$"
+			}
+		},
+		"volumes" : {
+			"type"  : "array",
+			"items" : {
+				"type"    : "string",
+				"pattern" : "[^\\0]+:(/[^/]+)+$"
+			}
+		},
+		"expose" : {
+			"type"  : "array",
+			"items" : {
+				"type"    : "string",
+				"pattern" : "^\\d+$"
+			}
+		}
+	},
+	"required" : ["id", "image"]
+}
