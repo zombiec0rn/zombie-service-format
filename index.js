@@ -3,7 +3,7 @@ var assign = require('object.assign')
 var utils = require('./utils')
 var schema = require('./schema.json')
 
-var CCCFException = function(message, trace) {
+var ZSFException = function(message, trace) {
 	this.message  = message
 	this.trace    = trace
 	this.toString = function() {
@@ -11,14 +11,14 @@ var CCCFException = function(message, trace) {
 	}
 }
 
-env.addSchema('cccf', schema)
-env.addSchema('cccf-multiple', {
+env.addSchema('zsf', schema)
+env.addSchema('zsf-multiple', {
 	type  : 'array',
 	items : {
-		'$ref' : "#/definitions/cccf"
+		'$ref' : "#/definitions/zsf"
 	},
 	definitions : {
-		"cccf" : schema
+		"zsf" : schema
 	}
 })
 
@@ -27,11 +27,11 @@ module.exports = {
 	validate : function(config) {
 		if (!(typeof config == 'object')) config = JSON.parse(config)
 		var _config = (config instanceof Array) ? config : [config]
-		var err = env.validate('cccf-multiple', _config)
-		if (err) throw new CCCFException('Invalid config', err)
+		var err = env.validate('zsf-multiple', _config)
+		if (err) throw new ZSFException('Invalid config', err)
 		return config
 	},
-	exception : CCCFException,
+	exception : ZSFException,
   random: function(num, opts) {
     opts = opts || {}
     return Array.apply(null, {length: num}).map(function(value, index){

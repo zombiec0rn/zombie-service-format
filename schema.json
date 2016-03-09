@@ -1,5 +1,5 @@
 {
-	"title" : "Common Container Configuration Format",
+	"title" : "Zombie Service Format",
 	"type"  : "object",
 	"properties" : {
 		"id" : {
