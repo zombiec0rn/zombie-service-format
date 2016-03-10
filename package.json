@@ -11,9 +11,8 @@
     "url": "https://github.com/zombiec0rn/zombie-service-format.git"
   },
   "keywords": [
-    "container",
-    "service",
-    "format",
+    "zombie-format",
+    "zombie-service",
     "zombiec0rn"
   ],
   "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
