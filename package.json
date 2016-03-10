@@ -12,10 +12,9 @@
   },
   "keywords": [
     "container",
-    "json",
+    "service",
     "format",
-    "docker",
-    "zombie"
+    "zombiec0rn"
   ],
   "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
   "license": "BSD",
